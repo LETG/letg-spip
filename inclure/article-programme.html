@@ -1,0 +1,13 @@
+<BOUCLE_article(ARTICLES){id_article}{statut?}>
+<li class="item hentry" id="id#ID_ARTICLE">
+	<h3 class="h3 entry-title"><a href="#id#ID_ARTICLE">[(#TITRE)] |&nbsp;[(#ANNEE_DEBUT)][-(#ANNEE_FIN)]</a></h3>
+	[<div class="#EDIT{texte} entry-content">(#TEXTE)</div>]
+	<div class="meta-publi">
+		[<p class="reponsable"><span class="label"><:letg:label_responsable:> : </span>(#RESPONSABLE)</p>]
+		[<p class="auteurs"><span class="label"><:letg:label_participants:> : </span>(#LESAUTEURS)</p>]
+		<B_equipes><p class="equipes"><span class="label"><:letg:label_equipes:> : </span><BOUCLE_equipes(MOTS){id_article}{id_groupe=#CONFIG{letg/groupe_equipes,2}}{", "}><a href="#URL_MOT">#TITRE</a></BOUCLE_equipes></p></B_equipes>
+		[<p class="financeur"><span class="label"><:letg:label_financeur:> : </span>(#FINANCEUR)</p>]
+		[<p class="hyperlien"><span class="label"><:voir_en_ligne:> : </span><a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+	</div>
+</li>
+</BOUCLE_article>

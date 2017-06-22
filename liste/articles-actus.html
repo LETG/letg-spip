@@ -1,0 +1,12 @@
+<B_articles>
+<div class="liste resume articles actus">
+	#ANCRE_PAGINATION
+	<h2 class="h3">[(#ENV{titre,<:letg:titre_actus:>}|trim)]</h2>
+	<ul class="liste-items">
+		<BOUCLE_articles(ARTICLES){id_rubrique=#CONFIG{letg/secteur_actus,1}}{id_mot?}{doublons}{!par date}{pagination #ENV{nb,5}}>
+		#INCLURE{fond=inclure/article-actu,id_article}
+		</BOUCLE_articles>
+	</ul>
+	[<p class="pagination">(#PAGINATION)</p>]
+</div>
+</B_articles>

@@ -1,0 +1,12 @@
+[(#REM) Fil d'Ariane ]
+#SET{labo,#INFO_DESCRIPTIF{mot,#ENV{id_mot}}|PtoBR}
+<p id="hierarchie"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><span class="sep"> &gt; </span><strong class="on"><:letg:titre_membres:>[ : (#GET{labo})]</strong></p>
+
+<div class="content-principal">
+<div class="cartouche">
+	<h1 class="h1"><:letg:titre_membres:>[ : (#GET{labo})]</h1>
+</div>
+
+<INCLURE{fond=liste/membres,id_mot} />
+
+</div>

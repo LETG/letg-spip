@@ -1,0 +1,14 @@
+<a href="http://www.spip.net/" title="<:site_realise_avec_spip:>">SPIP</a><?php
+if (isset($GLOBALS['visiteur_session']['id_auteur']) AND $GLOBALS['visiteur_session']['id_auteur']) {
+?><span class="sep"> | </span><a href="#URL_LOGOUT" rel="nofollow"><:icone_deconnecter:></a><?php
+	if (include_spip('inc/autoriser') AND autoriser('ecrire')){
+	?><span class="sep"> | </span><a href="#EVAL{_DIR_RESTREINT_ABS}"><:espace_prive:></a><?php
+	}
+}
+else {
+?><span class="sep"> | </span><a href="[(#URL_PAGE{login}|parametre_url{url,#SELF|parametre_url{url,''}})]" rel="nofollow"><:lien_connecter:></a><?php
+}
+?><span class="sep"> |
+</span><a href="#URL_PAGE{backend}" rel="alternate" title="<:syndiquer_site:>">RSS&nbsp;2.0</a>
+<BOUCLE_contact(ARTICLES){page=contact}><span class="sep"> | </span><a href="#URL_ARTICLE">#TITRE</a></BOUCLE_contact>
+<BOUCLE_mentions(ARTICLES){page=mentions}><span class="sep"> | </span><a href="#URL_ARTICLE">#TITRE</a></BOUCLE_mentions>

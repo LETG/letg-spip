@@ -1,0 +1,16 @@
+[<div class="boite text-center">
+<a rel="start home" href="#URL_SITE_SPIP/" title="<:accueil_site:>">(#CHEMIN{images/letg.png}|balise_img)</a>
+</div>]
+
+<div class="boite recherche">
+#FORMULAIRE_RECHERCHE
+</div>
+
+<BOUCLE_rubextranet(RUBRIQUES){composition=extranet}{racine}>
+<div class="boite extranet">
+	<h2 class="h2">#TITRE</h2>
+	<a href="#URL_RUBRIQUE"><:letg:lien_extranet:></a>
+</div>
+</BOUCLE_rubextranet>
+
+[(#INCLURE{fond=inclure/partenaires})]

@@ -1,0 +1,20 @@
+<BOUCLE_content(MOTS){id_mot}{doublons}>
+[(#REM) Fil d'Ariane ]
+<p id="hierarchie"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><span class="sep"> &gt; </span><span><:letg:label_equipes:></span>[<span class="sep"> &gt; </span><strong class="on">(#TITRE|couper{80})</strong>]</p>
+
+<div class="content-principal">
+
+	<div class="cartouche">
+		[(#LOGO_MOT|image_reduire{200,200})]
+		<h1 class="h1 #EDIT{titre}">#TITRE</h1>
+		[(#TEXTE*|strpos{</multi>}|oui)[(#INCLURE{fond=inclure/trads,lang=#ENV{lang},self=#SELF})]]
+	</div>
+
+	[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+
+	<INCLURE{fond=liste/membres,id_mot} />
+
+</div>
+
+[<div class="notes"><hr />(#NOTES)</div>]
+</BOUCLE_content>

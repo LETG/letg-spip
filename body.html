@@ -1,0 +1,28 @@
+<body>
+	<div class="page">
+		<div class="header" id="header">
+			<INCLURE{fond=header/#ENV{type-page},env} />
+		</div>
+		<div class="nav hornav clearfix" id="nav">
+			<INCLURE{fond=inclure/nav,env} />
+		</div>
+		<div class="container">
+			<div class="wrapper">
+				<div class="content" id="content">
+					<INCLURE{fond=content/#ENV{type-page},env} />
+				</div>
+			</div>
+			<div class="extra1 col" id="extra1">
+				<INCLURE{fond=extra1/#ENV{type-page},env} />
+			</div>
+			<div class="extra2 col" id="extra2">
+				<INCLURE{fond=extra2/#ENV{type-page},env} />
+			</div>
+		</div>
+		<div class="footer" id="footer">
+			<div class="container">
+				<INCLURE{fond=footer/#ENV{type-page},env} />
+			</div>
+		</div>
+	</div>
+</body>

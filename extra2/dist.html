@@ -1,0 +1,17 @@
+<B_anoter>
+<div class="liste resume articles actus anoter">
+	<h2 class="h3"><:letg:titre_anoter:></h2>
+	<ul class="liste-items">
+		<BOUCLE_anoter(ARTICLES){id_mot=#CONFIG{letg/mot_anoter,11}}{tout}{!par date}>
+		<li class="item">
+			<h3 class="h4 entry-title">[[<a href="(#URL_SITE)">](#LOGO_ARTICLE|image_reduire{180,100})[</a>(#URL_SITE|oui)]]#TITRE</h3>
+			[<div class="entry-content">(#TEXTE)</div>]
+			<div class="meta-publi">
+				[<p class="hyperlien"><span class="label"><:voir_en_ligne:> : </span><a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+				<B_docs><p class="documents"><span class="label"><:letg:label_documents:> : </span><BOUCLE_docs(DOCUMENTS){id_article}{", "}><a href="#URL_DOCUMENT" title="<:bouton_telecharger|attribut_html:>" type="#MIME_TYPE">[(#TITRE|sinon{[(#FICHIER|basename|couper{80})]})] <span class="small">(#TYPE_DOCUMENT[ &ndash; (#TAILLE|taille_en_octets)])</span></a></BOUCLE_docs></p></B_docs>
+			</div>
+		</li>
+		</BOUCLE_anoter>
+	</ul>
+</div>
+</B_anoter>

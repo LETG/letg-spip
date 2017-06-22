@@ -1,0 +1,18 @@
+<div class="content-principal">
+	<div class="cartouche invisible">
+		<h1 class="h1 invisible">#NOM_SITE_SPIP</h1>
+	</div>
+</div>
+
+<B_unes>
+<div class="liste resume articles actus une">
+	<h2 class="h3"><:letg:titre_une:></h2>
+	<ul class="liste-items">
+		<BOUCLE_unes(ARTICLES){id_rubrique=#CONFIG{letg/secteur_actus,1}}{id_mot=#CONFIG{letg/mot_une,10}}{!par date}{doublons}>
+		#INCLURE{fond=inclure/article-actu,id_article}
+		</BOUCLE_unes>
+	</ul>
+</div>
+</B_unes>
+
+<INCLURE{fond=liste/articles-actus,env,ajax,doublons} />

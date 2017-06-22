@@ -1,0 +1,9 @@
+<li class="item">
+	[<h3 class="h3 entry-title">[<a href="(#ENV{valeur/uri_s})">](#ENV{valeur/title_s/0})[</a>(#ENV{valeur/uri_s}|oui)]</h3>]
+	<div class="meta-publi">
+		[<p class="date"><span class="label"><:letg:label_publication_date:> : </span>(#ENV{valeur/producedDate_tdate}|affdate{Y})</p>]
+		[<p class="auteurs"><span class="label"><:icone_auteurs:> : </span>(#ENV{valeur/authFullName_s}|implode{", "})</p>]
+		[<p class="source"><span class="label"><:letg:label_publication_source:> : </span>(#ENV{valeur/journalTitle_s})[ (#ENV{valeur/volume_s})][ (#ENV{valeur/issue_s})][ pp.(#ENV{valeur/page_s})]</p>]
+		[<p class="typedoc"><span class="label"><:letg:label_publication_type:> : </span>(#ENV{valeur/docType_s}|letg_traduire_doctype)</p>]
+	</div>
+</li>

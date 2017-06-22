@@ -1,0 +1,11 @@
+<div class="menu-conteneur navbar-inner">
+#INCLURE{fond=inclure/menu,env,identifiant=barrenav,class=container}
+</div>
+<B_labos>
+<ul class="menu-items labos container">
+	<li class="item[(#ENV{id_mot}|non) on]"><a href="[(#SELF|parametre_url{id_mot,''})]"><:letg:label_tout:></a></li>
+<BOUCLE_labos(MOTS){id_groupe=#CONFIG{letg/groupe_labos,1}}{par num titre, titre}>
+	<li class="item[ (#EXPOSE)]"><a href="[(#SELF|parametre_url{id_mot,#ID_MOT})]">#TITRE</a></li>
+</BOUCLE_labos>
+</ul>
+</B_labos>

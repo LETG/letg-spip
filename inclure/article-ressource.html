@@ -1,0 +1,10 @@
+<BOUCLE_article(ARTICLES){id_article}{statut?}>
+<li class="item hentry" id="id#ID_ARTICLE">
+	<h3 class="h3 entry-title"><a href="#id#ID_ARTICLE">#TITRE</a></h3>
+	[<a href="[(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)]" class="mediabox">(#LOGO_ARTICLE|image_reduire{150,100})</a>]
+	[<div class="#EDIT{texte} entry-content">(#TEXTE)</div>]
+	<div class="meta-publi">
+		[<p class="hyperlien"><span class="label"><:voir_en_ligne:> : </span><a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+	</div>
+</li>
+</BOUCLE_article>

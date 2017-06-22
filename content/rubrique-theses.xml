@@ -1,0 +1,7 @@
+<composition>
+	<nom>Rubrique thèses</nom>
+	<description>Composition adaptée pour la rubrique des thèses.</description>
+	<icon>images/objet-simple.png</icon>
+	<branche type="rubrique" composition="redirect-secteur" />
+	<branche type="article" composition="redirect-secteur" />
+</composition>

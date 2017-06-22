@@ -1,0 +1,12 @@
+<B_auteurs>
+<div class="liste resume membres">
+	#ANCRE_PAGINATION
+	<h2 class="h3"><:letg:titre_membres:> (#GRAND_TOTAL)</h2>
+	<ul class="liste-items">
+		<BOUCLE_auteurs(AUTEURS){statut=1comite}{recherche}{!par points}{pagination 10}>
+		<li class="item"><a href="#URL_AUTEUR">#NOM #PRENOM</a>[, (#LISTER_VALEURS{fonction})][, (#EMPLOYEUR)]</li>
+		</BOUCLE_auteurs>
+	</ul>
+	[<p class="pagination">(#PAGINATION)</p>]
+</div>
+</B_auteurs>

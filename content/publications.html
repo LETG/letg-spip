@@ -1,0 +1,24 @@
+[(#REM) Fil d'Ariane ]
+#SET{labo,#INFO_DESCRIPTIF{mot,#ENV{id_mot}}|PtoBR}
+<p id="hierarchie"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><span class="sep"> &gt; </span><strong class="on"><:letg:titre_publications:>[ : (#GET{labo})]</strong></p>
+
+<div class="content-principal">
+<div class="cartouche">
+	<h1 class="h1"><:letg:titre_publications:>[ : (#GET{labo})]</h1>
+</div>
+
+[(#SET{collection,LETG})][
+(#ENV{id_mot}|oui) #SET{collection,#INFO_COLLECTION_HAL{mot,#ENV{id_mot}}} ]
+<B_pubs>
+<div class="liste publications resume">
+	<h2 class="h3"><:letg:titre_publications_hal:></h2>
+	<ul class="liste-items">
+	<BOUCLE_pubs(DATA){source json,https://api.archives-ouvertes.fr/search/#GET{collection}?sort=producedDate_tdate%20desc&fl=title_s%2Curi_s%2CproducedDate_tdate%2CauthFullName_s%2CjournalTitle_s%2Cvolume_s%2Cissue_s%2Cpage_s%2CdocType_s}{datapath response/docs}>
+		[(#INCLURE{fond=inclure/publication,valeur=#VALEUR})]
+	</BOUCLE_pubs>
+	</ul>
+	<p class="text-center"><a href="https://hal.archives-ouvertes.fr/#GET{collection}" class="button"><:letg:lien_publications_toutes_hal:></a></p>
+</div>
+</B_pubs>
+
+</div>

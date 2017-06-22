@@ -1,0 +1,9 @@
+<BOUCLE_test(CONDITION){si #ENV{id_mot}}>
+<BOUCLE_labo(ARTICLES){id_rubrique}{id_mot}>
+[(#INCLURE{fond=content/article-presentation,id_article,lang=#ENV{lang}})]
+</BOUCLE_labo>
+</BOUCLE_test>
+<BOUCLE_general(ARTICLES){id_rubrique}{!id_mot>0}>
+[(#INCLURE{fond=content/article-presentation,id_article,lang=#ENV{lang}})]
+</BOUCLE_general>
+<//B_test>

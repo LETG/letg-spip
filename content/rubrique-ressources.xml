@@ -1,0 +1,7 @@
+<composition>
+	<nom>Rubrique ressources</nom>
+	<description>Composition adaptée pour la rubrique des ressources.</description>
+	<icon>images/objet-simple.png</icon>
+	<branche type="rubrique" composition="redirect-secteur" />
+	<branche type="article" composition="redirect-secteur" />
+</composition>

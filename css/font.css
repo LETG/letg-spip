@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'nimbussanslregucond';
+    src: url('polices/nimbuscondgnu-webfont.woff2') format('woff2'),
+         url('polices/nimbuscondgnu-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body { font-family: Arial, Helvetica, "Open Sans", sans-serif; color: #333; }

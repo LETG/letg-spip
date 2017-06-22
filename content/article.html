@@ -1,0 +1,28 @@
+<BOUCLE_content(ARTICLES){id_article}>
+[(#REM) Fil d'Ariane ]
+<p id="hierarchie"><a href="#URL_SITE_SPIP/"><:accueil_site:></a>[<span class="sep"> &gt; </span><strong class="on">(#TITRE|couper{80})</strong>]</p>
+
+<div class="content-principal">
+	<div class="cartouche">
+		[(#LOGO_ARTICLE_RUBRIQUE|image_reduire{200,200})]
+		<h1 class="h1 #EDIT{titre}">#TITRE</h1>
+		<div class="meta-publi">
+			<p class="date"><span class="label"><:date:> : </span><abbr class="published" title="[(#DATE|date_iso)]">[(#DATE|affdate)]</abbr></p>
+			[<p class="lieu"><span class="label"><:letg:label_lieu:> : </span>(#LIEU)</p>]
+			[<p class="hyperlien"><span class="label"><:voir_en_ligne:> : </span><a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+		</div>
+	</div>
+
+	[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{555,0})</div>]
+	[<div class="#EDIT{texte} texte surlignable">(#TEXTE|image_reduire{555,0})</div>]
+
+	[<div class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|image_reduire{500,0})</div>]
+
+	[(#REM) Gestion du portfolio et des documents ]
+	[(#INCLURE{fond=inclure/documents,id_article})]
+
+</div>
+
+[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+
+</BOUCLE_content>

@@ -1,0 +1,7 @@
+<composition>
+	<nom>Rubrique extranet</nom>
+	<description>Composition adaptée pour la rubrique extranet.</description>
+	<icon>images/objet-simple.png</icon>
+	<branche type="rubrique" composition="extranet" />
+	<branche type="article" composition="extranet" />
+</composition>

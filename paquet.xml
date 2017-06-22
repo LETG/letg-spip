@@ -1,0 +1,31 @@
+<paquet
+	prefix="letg"
+	categorie="squelette"
+	version="1.0.0"
+	etat="stable"
+	compatibilite="[3.0.0;3.0.*]"
+	logo=""
+	schema="1.0.0"
+>
+
+	<nom>letg</nom>
+	<!-- Squelette du site letg.cnrs.fr -->
+
+	<auteur>b_b</auteur>
+	<copyright>2015</copyright>
+	<licence>GPL v3</licence>
+	
+	<pipeline nom="rechercher_liste_des_champs" inclure="letg_pipelines.php" />
+	<pipeline nom="declarer_champs_extras" inclure="base/letg.php" />
+	<pipeline nom="pre_boucle" inclure="letg_pipelines.php" />
+	<pipeline nom="accesrestreint_liste_zones_autorisees" inclure="letg_pipelines.php" />
+	
+	<necessite nom="modesto" compatibilite="[1.0.0;]" />
+	<necessite nom="compositions" compatibilite="[3.3.7;]" />
+	<necessite nom="cextras" compatibilite="[3.2.6;[" />
+	<necessite nom="verifier" compatibilite="[1.0.7;[" />
+	<necessite nom="menus" compatibilite="[1.5.5;[" />
+	<necessite nom="ancresdouces" compatibilite="[1.4.6;[" />
+	<utilise nom="tablematieres" compatibilite="[2.3.0;[" />
+
+</paquet>

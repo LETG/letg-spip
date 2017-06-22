@@ -1,0 +1,48 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}>
+[(#REM) Fil d'Ariane ]
+<p id="hierarchie"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><BOUCLE_ariane(HIERARCHIE){id_rubrique}><span class="sep"> &gt; </span><a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>[<span class="sep"> &gt; </span><strong class="on">(#TITRE|couper{80})</strong>]</p>
+
+<div class="content-principal">
+
+	<div class="cartouche">
+		[(#LOGO_RUBRIQUE|image_reduire{200,200})]
+		<h1 class="h1 #EDIT{titre}">#TITRE</h1>
+		[<p class="info-publi"><span class="published"><:dernier_ajout:> : (#DATE|affdate_jourcourt).</span></p>]
+	</div>
+
+	[<div class="#EDIT{texte}">(#TEXTE)</div>]
+</div>
+
+<B_sous_rubriques>
+<div class="liste resume miniplan">
+	<h2 class="h3"><:sous_rubriques:></h2>
+	<ul class="liste-items">
+		<BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}>
+		<li class="item">
+			<a href="#URL_RUBRIQUE">[(#TITRE)]</a>
+			[(#REM) Une boucle recursive pour le mini plan]
+			<B_miniplan>
+			<ul class="liste-items">
+				<BOUCLE_miniplan(RUBRIQUES) {id_parent} {par num titre, titre}>
+				<li class="item">
+					<a href="#URL_RUBRIQUE">[(#TITRE)]</a>
+					<BOUCLE_m2(BOUCLE_miniplan)></BOUCLE_m2>
+				</li>
+				</BOUCLE_miniplan>
+			</ul>
+			</B_miniplan>
+
+		</li>
+		</BOUCLE_sous_rubriques>
+	</ul>
+	</div>
+</B_sous_rubriques>
+
+<INCLURE{fond=liste/articles-extranet,env,ajax,titre=<:articles_rubrique:>} />
+
+[(#REM) Gestion du portfolio et des documents ]
+[(#INCLURE{fond=inclure/documents,id_rubrique})]
+
+[<div class="notes"><hr />(#NOTES)</div>]
+
+</BOUCLE_content>

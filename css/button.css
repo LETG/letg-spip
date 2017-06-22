@@ -1,0 +1,30 @@
+/* simple buttons from http://semantic-ui.com/ */
+.button {
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	min-height: 1em;
+	outline: none;
+	border: none;
+	background-color: #999999;
+	color: #ffffff;
+	margin: 0em;
+	padding: 0em 0.5em;
+	line-height: 1.75;
+	font-weight: normal;
+	font-style: normal;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 0.25em;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	transition: background-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+}
+
+.button:hover {
+	text-decoration: none;
+	color: #ffffff;
+	background-color: #666666;
+}

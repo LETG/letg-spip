@@ -1,0 +1,5 @@
+[(#REM) cf https://contrib.spip.net/Creation-d-un-menu-langue-plat ]
+[(#SET{langues,[(#CONFIG{langues_multilingue}|explode{','}|serialize)]})]
+<B_langues><p class="traductions"><BOUCLE_langues(POUR){tableau #GET{langues}}{', '}>
+<span lang="#LANG" xml:lang="#LANG" dir="#LANG_DIR"><a href="[(#SELF|parametre_url{lang,#VALEUR})]" rel="alternate" hreflang="#VALEUR"[(#ENV{lang}|=={#VALEUR}|oui) class="on"]>[(#VALEUR|traduire_nom_langue)]</a></span>
+</BOUCLE_langues></p></B_langues>

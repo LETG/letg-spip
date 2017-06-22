@@ -1,0 +1,15 @@
+<B_anoter>
+<div class="liste resume articles actus anoter">
+	<h2 class="h3"><:letg:titre_annonces:></h2>
+	<ul class="liste-items">
+		<BOUCLE_anoter(ARTICLES){id_mot=#ENV{mot,#CONFIG{letg/mot_anoter,11}}}{tout}{!par date}>
+		<li class="item">
+			<h3 class="h4 entry-title">[<a href="#URL_ARTICLE">(#LOGO_ARTICLE|image_reduire{180,100})</a>]#TITRE</h3>
+			<div class="meta-publi">
+				[<p class="hyperlien"><a href="(#URL_ARTICLE)"><:zpip:lire_la_suite:></a></p>]
+			</div>
+		</li>
+		</BOUCLE_anoter>
+	</ul>
+</div>
+</B_anoter>

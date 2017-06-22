@@ -1,0 +1,114 @@
+<BOUCLE_set(AUTEURS){0,1}>#SET{fonctions,#LISTER_CHOIX**{fonction}}</BOUCLE_set>
+<B_fonctions>
+<table class="spip liste fonctions">
+	<caption><:letg:titre_effectifs:><caption>
+	<thead>
+		<tr>
+			<th><:letg:label_membres_categorie:></th>
+			<th><:letg:label_membres_nb:></th>
+		</tr>
+	</thead>
+	<tbody>
+	<BOUCLE_fonctions(DATA){source table,#GET{fonctions}}>
+		<BOUCLE_total(AUTEURS){id_mot?}{statut=1comite}{fonction=#CLE} />#SET{total,#GRAND_TOTAL}<//B_total>
+		[<tr>(#GET{total}|>{0}|oui)<td>#VALEUR</td>[<td>(#GET{total})</td>]</tr>]
+	</BOUCLE_fonctions>
+	</tbody>
+</table>
+</B_fonctions>
+
+
+<BOUCLE_grandtotal(AUTEURS){id_mot?}{statut=1comite}{par nom,prenom} />
+[<h2 class="h2">(#GRAND_TOTAL|singulier_ou_pluriel{letg:nb_membres_un,letg:nb_membres})</h2>]
+<//B_grandtotal>
+
+<div class="liste tdm">
+	<ul class="liste-items">
+		<BOUCLE_auteurs11(AUTEURS){id_mot?}{fonction IN professeur,maitre_conference,directeur_etude,directeur_recherche,charge_recherche}{statut=1comite}{poste=permanent}{statutpro=titulaire}{par nom,prenom}{0,1}>
+		<li class="item"><a href="#chercheurs" class="button"><:letg:titre_membres_chercheurs:></a></li>
+		</BOUCLE_auteurs11>
+		<BOUCLE_auteurs22(AUTEURS){id_mot?}{fonction IN ingenieur_recherche,ingenieur_etude,assistant_ingenieur,technicien,secretaire_gestionnaire}{statut=1comite}{poste=permanent}{statutpro=titulaire}{par nom,prenom}{0,1}>
+		<li class="item"><a href="#ingetechs" class="button"><:letg:titre_membres_ingetechs:></a></li>
+		</BOUCLE_auteurs22>
+		<BOUCLE_auteurs33(AUTEURS){id_mot?}{fonction=doctorant}{statut=1comite}{poste=contractuel}{statutpro=titulaire}{par nom,prenom}{0,1}>
+		<li class="item"><a href="#doctorants" class="button"><:letg:titre_membres_doctorants:></a></li>
+		</BOUCLE_auteurs33>
+		<BOUCLE_auteurs44(AUTEURS){id_mot?}{fonction IN post_doctorant,ingenieur_recherche,ingenieur_etude,assistant_ingenieur,technicien,past,secretaire_gestionnaire,autre}{statut=1comite}{poste=contractuel}{statutpro=titulaire}{par nom,prenom}{0,1}>
+		<li class="item"><a href="#contractuels" class="button"><:letg:titre_membres_contractuels:></a></li>
+		</BOUCLE_auteurs44>
+		<BOUCLE_auteurs55(AUTEURS){id_mot?}{statut=6forum}{statutpro=associe}{par nom,prenom}{0,1}>
+		<li class="item"><a href="#associes" class="button"><:letg:titre_membres_associes:></a></li>
+		</BOUCLE_auteurs55>
+		<BOUCLE_auteurs66(AUTEURS){id_mot?}{statut=6forum}{statutpro=accueilli}{par nom,prenom}{0,1}>
+		<li class="item"><a href="#accueillis" class="button"><:letg:titre_membres_accueillis:></a></li>
+		</BOUCLE_auteurs66>
+	</ul>
+</div>
+
+
+
+<B_auteurs1>
+<div class="liste resume membres">
+	<h3 class="h3" id="chercheurs"><:letg:titre_membres_chercheurs:></h3>
+	<ul class="liste-items">
+		<BOUCLE_auteurs1(AUTEURS){id_mot?}{fonction IN professeur,maitre_conference,directeur_etude,directeur_recherche,charge_recherche}{statut=1comite}{poste=permanent}{statutpro=titulaire}{par nom,prenom}>
+		<li class="item"><a href="#URL_AUTEUR">#NOM #PRENOM</a>[, (#LISTER_VALEURS{fonction})][, (#EMPLOYEUR)]</li>
+		</BOUCLE_auteurs1>
+	</ul>
+</div>
+</B_auteurs1>
+
+<B_auteurs2>
+<div class="liste resume membres">
+	<h3 class="h3" id="ingetechs"><:letg:titre_membres_ingetechs:></h3>
+	<ul class="liste-items">
+		<BOUCLE_auteurs2(AUTEURS){id_mot?}{fonction IN ingenieur_recherche,ingenieur_etude,assistant_ingenieur,technicien,secretaire_gestionnaire}{statut=1comite}{poste=permanent}{statutpro=titulaire}{par nom,prenom}>
+		<li class="item"><a href="#URL_AUTEUR">#NOM #PRENOM</a>[, (#LISTER_VALEURS{fonction})][, (#EMPLOYEUR)]</li>
+		</BOUCLE_auteurs2>
+	</ul>
+</div>
+</B_auteurs2>
+
+<B_auteurs3>
+<div class="liste resume membres">
+	<h3 class="h3" id="doctorants"><:letg:titre_membres_doctorants:></h3>
+	<ul class="liste-items">
+		<BOUCLE_auteurs3(AUTEURS){id_mot?}{fonction=doctorant}{statut=1comite}{poste=contractuel}{statutpro=titulaire}{par nom,prenom}>
+		<li class="item"><a href="#URL_AUTEUR">#NOM #PRENOM</a>[, (#EMPLOYEUR)]</li>
+		</BOUCLE_auteurs3>
+	</ul>
+</div>
+</B_auteurs3>
+
+<B_auteurs4>
+<div class="liste resume membres">
+	<h3 class="h3" id="contractuels"><:letg:titre_membres_contractuels:></h3>
+	<ul class="liste-items">
+		<BOUCLE_auteurs4(AUTEURS){id_mot?}{fonction IN post_doctorant,ingenieur_recherche,ingenieur_etude,assistant_ingenieur,technicien,past,secretaire_gestionnaire,autre,chercheur}{statut=1comite}{poste=contractuel}{statutpro=titulaire}{par nom,prenom}>
+		<li class="item"><a href="#URL_AUTEUR">#NOM #PRENOM</a>[, (#LISTER_VALEURS{fonction})][, (#EMPLOYEUR)]</li>
+		</BOUCLE_auteurs4>
+	</ul>
+</div>
+</B_auteurs4>
+
+<B_auteurs5>
+<div class="liste resume membres">
+	<h3 class="h3" id="associes"><:letg:titre_membres_associes:></h3>
+	<ul class="liste-items">
+		<BOUCLE_auteurs5(AUTEURS){id_mot?}{statut=6forum}{statutpro=associe}{par nom,prenom}>
+		<li class="item"><a href="#URL_AUTEUR">#NOM #PRENOM</a>[, (#LISTER_VALEURS{fonction})][, (#EMPLOYEUR)]</li>
+		</BOUCLE_auteurs5>
+	</ul>
+</div>
+</B_auteurs5>
+
+<B_auteurs6>
+<div class="liste resume membres">
+	<h3 class="h3" id="accueillis"><:letg:titre_membres_accueillis:></h3>
+	<ul class="liste-items">
+		<BOUCLE_auteurs6(AUTEURS){id_mot?}{statut=6forum}{statutpro=accueilli}{par nom,prenom}>
+		<li class="item"><a href="#URL_AUTEUR">#NOM #PRENOM</a>[, (#LISTER_VALEURS{fonction})][, (#EMPLOYEUR)]</li>
+		</BOUCLE_auteurs6>
+	</ul>
+</div>
+</B_auteurs6>

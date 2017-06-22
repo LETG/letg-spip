@@ -1,0 +1,13 @@
+<BOUCLE_article(ARTICLES){id_article}{statut?}>
+<li class="item hentry" id="id#ID_ARTICLE">
+	<h3 class="h3 entry-title"><a href="#id#ID_ARTICLE">#TITRE</a></h3>
+	<div class="meta-publi">
+		[(#ENV{auteur}|!={non}|oui)[<p class="auteurs">(#LESAUTEURS)</p>]]
+		[<p class="ecole_doctorale"><span class="label"><:letg:label_ecole_doctorale:> : </span>(#ECOLE_DOCTORALE)</p>]
+		[<p class="directeur"><span class="label"><:letg:label_directeur:> : </span>(#DIRECTEUR)</p>]
+		[(#DATE_SOUTENANCE|<{#ENV{date}}|oui)[<p class="date_soutenance"><span class="label"><:letg:label_date_soutenance:> : </span>(#DATE_SOUTENANCE|affdate)</p>]]
+		[<p class="hyperlien"><span class="label"><:voir_en_ligne:> : </span><a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+		<B_docs><p class="documents"><span class="label"><:letg:label_documents:> : </span><BOUCLE_docs(DOCUMENTS){id_article}{", "}><a href="#URL_DOCUMENT" title="<:bouton_telecharger|attribut_html:>" type="#MIME_TYPE">[(#TITRE|sinon{[(#FICHIER|basename|couper{80})]})] <span class="small">(#TYPE_DOCUMENT[ &ndash; (#TAILLE|taille_en_octets)])</span></a></BOUCLE_docs></p></B_docs>
+	</div>
+</li>
+</BOUCLE_article>
