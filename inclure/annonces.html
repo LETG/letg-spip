@@ -1,6 +1,6 @@
 <B_anoter>
 <div class="liste resume articles actus anoter">
-	<h2 class="h3"><:letg:titre_annonces:></h2>
+	<h2 class="h3">[(#ENV{titre}|sinon{<:letg:titre_annonces:>})]</h2>
 	<ul class="liste-items">
 		<BOUCLE_anoter(ARTICLES){id_mot=#ENV{mot,#CONFIG{letg/mot_anoter,11}}}{tout}{!par date}>
 		<li class="item">
