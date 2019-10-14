@@ -1,7 +1,7 @@
 <paquet
 	prefix="letg"
 	categorie="squelette"
-	version="1.1.0"
+	version="1.2.0"
 	etat="stable"
 	compatibilite="[3.0.0;3.2.*]"
 	logo=""
@@ -12,6 +12,7 @@
 	<!-- Squelette du site letg.cnrs.fr -->
 
 	<auteur>b_b</auteur>
+	<credit lien="http://tinytypo.tetue.net/">Tiny Typo</credit>
 	<copyright>2015</copyright>
 	<licence>GPL v3</licence>
 	
@@ -20,7 +21,8 @@
 	<pipeline nom="pre_boucle" inclure="letg_pipelines.php" />
 	<pipeline nom="accesrestreint_liste_zones_autorisees" inclure="letg_pipelines.php" />
 	
-	<necessite nom="modesto" compatibilite="[1.0.0;]" />
+	<necessite nom="Zcore" compatibilite="[2.3.0;]" />
+	<necessite nom="Zpip" compatibilite="[2.0.7-dev;]" />
 	<necessite nom="compositions" compatibilite="[3.3.7;]" />
 	<necessite nom="cextras" compatibilite="[3.2.6;[" />
 	<necessite nom="verifier" compatibilite="[1.0.7;[" />

@@ -1,0 +1,9 @@
+.pagination .sep,
+.pagination .label { display: none }
+.pagination { padding: 10px 0 10px 0; text-align: center; }
+.pagination .lien_pagination,
+.pagination .on { padding: 2px 5px; margin: 0 2px; text-decoration: none; border: 1px solid #ededed; }
+.pagination .lien_pagination:hover,
+.pagination .lien_pagination:active,
+.pagination .on { color: #444; font-weight: normal; background-color: #ededed; }
+.pagination .disabled { display: none }

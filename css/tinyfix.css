@@ -1,0 +1,11 @@
+/* fixes for SPIP */
+.formulaire_spip ul,
+.comments-items { list-style: none; margin: 0; }
+
+/* fixes for tinytypo */
+.invisible { display: none; }
+.on { font-weight: bold; }
+
+/* https://github.com/tetue/tinytypo/issues/17 */
+a:focus img,
+a:active img { -moz-transform: none; -webkit-transform: none; -o-transform: none; -ms-transform: none; transform: none; }
