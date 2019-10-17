@@ -1,7 +1,7 @@
 <div class="liste boite partenaires">
 	<h2 class="h2"><:letg:titre_tutelles:></h2>
 	<ul class="liste-items">
-		[<li class="item fullwidth"><a href="http://www.cnrs.fr" target="_blank">(#CHEMIN{images/logo-cnrs.png}|balise_img|inserer_attribut{alt,CNRS}|inserer_attribut{title,CNRS})</a></li>]
+		[<li class="item fullwidth"><a href="http://www.cnrs.fr" target="_blank" rel="noopener noreferrer">(#CHEMIN{images/logo-cnrs.png}|balise_img|inserer_attribut{alt,CNRS}|inserer_attribut{title,CNRS})</a></li>]
 		<BOUCLE_article_tutelle(ARTICLES){page=tutelles}><BOUCLE_docs(DOCUMENTS){id_article}{extension IN jpg,png,gif}{par num titre, titre}>
 		[<li class="item"><a href="#CREDITS" title="[(#TITRE|attribut_html)]">(#FICHIER|image_reduire{75,75}|image_recadre{80,80,center})</a></li>]
 		</BOUCLE_docs></BOUCLE_article_tutelle>
