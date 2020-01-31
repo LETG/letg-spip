@@ -5,14 +5,11 @@
 <div class="content-principal">
 	<div class="vcard">[(#REM) microformat vcard]
 		<div class="cartouche">
-			[(#LOGO_AUTEUR|image_reduire{200,200})]
 			<h1 class="h1 fn">#NOM #PRENOM</h1>
 			<ul class="infos-auteur">
 				[<li class="item fonction"><span class="label"><:letg:label_fonction:> : </span>(#LISTER_VALEURS{fonction})</li>]
 				[<li class="item poste"><span class="label"><:letg:label_poste:> : </span>(#POSTE)</li>]
 				[<li class="item employeur"><span class="label"><:letg:label_employeur:> : </span>(#EMPLOYEUR)</li>]
-				[<li class="item tel"><span class="label"><:letg:label_telephone:> </span>(#TELEPHONE)</li>]
-				[<li class="item mail"><span class="label"><:letg:label_mail:> : </span><a href="mailto:#EMAIL">(#EMAIL)</a></li>]
 				[<li class="item publications"><a href="(#IDHAL|?{#publications,#LIEN_PUBLICATIONS})" class="url spip_out"><:letg:lien_publications_hal:></a></li>]
 				[<li class="item page_perso"><a href="(#URL_SITE)" class="url spip_out">Site perso</a></li>]
 				<B_docs><li class="item docs"><BOUCLE_docs(DOCUMENTS documents_liens){objet=auteur}{id_auteur}{', '}><a href="#URL_DOCUMENT">#TITRE</a></BOUCLE_docs></li></B_docs>
