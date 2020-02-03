@@ -13,3 +13,22 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 function letg_traduire_doctype($abbr){
 	return _T('letg:label_typedoc_'.strtolower($abbr));
 }
+
+/**
+ * Autorisation d'ajout d'un logo à un auteur
+ * Surcharge du core de SPIP
+ *
+ * Interdire aux rédacteurs d'envoyer un logo sur leur fiche auteur
+ *
+ * @param string $faire
+ * @param string $quoi
+ * @param int $id
+ * @param int $qui
+ * @param array $options
+ * @return bool
+ */
+if (!function_exists('autoriser_auteur_iconifier')) {
+	function autoriser_auteur_iconifier($faire, $type, $id, $qui, $opt) {
+		return false;
+	}
+}
