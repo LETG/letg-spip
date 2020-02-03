@@ -240,5 +240,3 @@ function letg_declarer_champs_extras($champs = array()){
 	);
 	return $champs;
 }
-
-?>

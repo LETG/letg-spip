@@ -94,5 +94,3 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'titre_une' => 'À la une',
 	
 );
-
-?>

@@ -13,5 +13,3 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 function letg_traduire_doctype($abbr){
 	return _T('letg:label_typedoc_'.strtolower($abbr));
 }
-
-?>

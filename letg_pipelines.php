@@ -48,5 +48,3 @@ function letg_accesrestreint_liste_zones_autorisees($zones='', $id_auteur=NULL) 
 	}
 	return $zones;
 }
-
-?>

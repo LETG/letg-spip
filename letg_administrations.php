@@ -19,5 +19,3 @@ function letg_vider_tables($nom_meta_base_version) {
 	cextras_api_vider_tables(letg_declarer_champs_extras());
 	effacer_meta($nom_meta_base_version);
 }
-
-?>
